@@ -3,7 +3,7 @@ class Api::V1::RecipesController < Api::V1::ApiController
 		@recipe = Recipe.find(params[:id])
 		render json: @recipe, status: 200
 	rescue ActiveRecord::RecordNotFound
-		render json: 'Não encontrada', status: 404
+		render json: 'Nao encontrada', status: 404
 	end
 
 	def create
@@ -18,7 +18,7 @@ class Api::V1::RecipesController < Api::V1::ApiController
 		message = "Receita alterada para #{@recipe.name}!"
 		render json: message, status: 202
 	rescue ActiveRecord::RecordNotFound
-		render json: 'Não encontrada', status: 404
+		render json: 'Nao encontrada', status: 404
 	end
 
 	def destroy
@@ -27,7 +27,7 @@ class Api::V1::RecipesController < Api::V1::ApiController
 		message = "Receita #{@recipe.name} deletada!"
 		render json: message, status: 202
 	rescue ActiveRecord::RecordNotFound
-		render json: 'Não encontrada', status: 404
+		render json: 'Nao encontrada', status: 404
 	end
 	
 	private

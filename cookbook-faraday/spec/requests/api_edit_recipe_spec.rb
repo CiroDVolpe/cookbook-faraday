@@ -14,6 +14,6 @@ describe 'API edit recipe' do
 		patch "/api/v1/recipes/00", params: { recipe: { name: 'Bolo de cenoura'}}	
 
 		expect(response.status).to eq 404
-  	expect(response.body).to include('Não encontrada')
+  	expect(response.body).to include('Nao encontrada')
 	end
 end

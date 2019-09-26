@@ -14,6 +14,6 @@ describe 'API destroy recipe' do
 		delete "/api/v1/recipes/00"
 
 		expect(response.status).to eq 404
-  	expect(response.body).to include('Não encontrada')
+  	expect(response.body).to include('Nao encontrada')
 	end
 end

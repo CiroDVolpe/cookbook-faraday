@@ -16,6 +16,6 @@ describe 'API show recipe' do
 	get '/api/v1/recipes/1'
 
 	expect(response.status).to eq 404
-  expect(response.body).to include('Não encontrada')
+  expect(response.body).to include('Nao encontrada')
 	end
 end
