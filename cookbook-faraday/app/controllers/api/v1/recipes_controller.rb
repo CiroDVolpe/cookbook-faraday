@@ -8,8 +8,9 @@ class Api::V1::RecipesController < Api::V1::ApiController
 
 	def create
     @recipe = Recipe.new(recipe_params)
-  	@recipe.save
-    render json: 'Receita criada com sucesso!', status: 201
+		@recipe.save
+		message = "Receita #{@recipe.name} criada com sucesso!"
+    render json: message, status: 201
 	end
 
 	def update
