@@ -12,7 +12,6 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = Recipe.new(params.require(:recipe).permit(:name))
-		@recipe.save
 		params = {recipe:{ name: "#{@recipe.name}"}}
 		response = Faraday.post('http://localhost:3000/api/v1/recipes', params)
 
