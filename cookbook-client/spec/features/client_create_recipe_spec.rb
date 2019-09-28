@@ -8,6 +8,6 @@ feature 'Client create recipe' do
 		click_on 'Enviar'
 
 		expect(page).to have_content('201')
-		expect(page).to have_content('Receita criada com sucesso!')
+		expect(page).to have_content('Receita Bolo criada com sucesso!')
 	end
 end

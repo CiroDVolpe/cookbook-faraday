@@ -12,14 +12,12 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = Recipe.new(params.require(:recipe).permit(:name))
-		response = Faraday.post('http://localhost:3000/api/v1/recipes', "name=Bolo")
+		@recipe.save
+		params = {recipe:{ name: "#{@recipe.name}"}}
+		response = Faraday.post('http://localhost:3000/api/v1/recipes', params)
 
-		@status = response.status
-		@body = response.body
-		
-
-		flash[:notice] = response.status
-		# flash[:alert] = "#{@body}"
+		flash[:status] = response.status
+		flash[:body] = response.body
 
 		redirect_to new_recipe_path
 	end

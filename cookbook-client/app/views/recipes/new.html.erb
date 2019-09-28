@@ -1,8 +1,9 @@
+<h1><%= flash[:status] %></h1>
+<p><%= flash[:body] %></p>
+
 <%= form_for @recipe do |f|%>
   <%= f.label :name, 'Nome' %>
   <%= f.text_field :name %>
 
   <%= f.submit 'Enviar' %>
 <% end %>
-<h1><%= flash.notice %></h1>
-<p><%= flash.alert %></p>
