@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Client create recipe' do
 	scenario 'successfully' do
 
-		visit 'recipes/new'
+		visit root_path
 		fill_in 'Nome', with: 'Bolo'
 		click_on 'Enviar'
 
