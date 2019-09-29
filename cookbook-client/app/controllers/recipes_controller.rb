@@ -39,6 +39,15 @@ class RecipesController < ApplicationController
 		redirect_to root_path
 	end
 
+	def destroy
+		response = Faraday.delete("http://localhost:3000/api/v1/recipes/#{params[:id]}")
+
+		flash[:status] = response.status
+		flash[:body] = response.body
+		
+		redirect_to root_path
+	end
+
 	private
 
 	def json_to_recipe()
